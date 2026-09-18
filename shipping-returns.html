@@ -1,1 +1,107 @@
-ff
+<!-- ==================== shipping-returns.html ==================== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shipping &amp; Returns | Sea2Sky Traders</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--gold:#c9a24b;--gold-light:#e8cd8a;--gold-deep:#a3812f;--navy:#0a0f1f;--navy-2:#111a2e;--navy-3:#16223a;--white:#fff;--gray:#9aa3b2;--bg-light:#f8f6f1;}
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',Arial,sans-serif;}
+  h1,h2,h3{font-family:'Playfair Display',serif;}
+  body{color:var(--navy);} a{text-decoration:none;} img{display:block;max-width:100%;}
+  header{background:var(--navy);position:sticky;top:0;z-index:999;box-shadow:0 4px 20px rgba(0,0,0,.3);}
+  .topbar{background:var(--navy-3);color:var(--gray);font-size:12.5px;padding:8px 5%;display:flex;justify-content:space-between;flex-wrap:wrap;}
+  .topbar a{color:var(--gold-light);margin-left:16px;}
+  .navwrap{display:flex;align-items:center;justify-content:space-between;padding:16px 5%;}
+  .logo{display:flex;align-items:center;gap:12px;}
+  .logo img{height:54px;width:54px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);}
+  .logo-text h1{color:var(--white);font-size:23px;} .logo-text h1 span{color:var(--gold);}
+  .logo-text p{color:var(--gray);font-size:10.5px;letter-spacing:3px;text-transform:uppercase;}
+  nav ul{display:flex;list-style:none;gap:32px;} nav ul li a{color:var(--white);font-size:14.5px;font-weight:500;} nav ul li a:hover{color:var(--gold);}
+  .cta-btn{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy);padding:11px 26px;border-radius:30px;font-weight:700;font-size:13.5px;}
+  .menu-toggle{display:none;color:var(--white);font-size:26px;cursor:pointer;}
+  @media(max-width:960px){nav ul{position:fixed;top:0;right:-100%;height:100vh;width:75%;background:var(--navy);flex-direction:column;padding:110px 30px;gap:26px;transition:right .4s;}nav ul.active{right:0;}.menu-toggle{display:block;}}
+  .page-banner{background:var(--navy);color:var(--white);text-align:center;padding:56px 5%;}
+  .page-banner span{color:var(--gold);letter-spacing:3px;font-size:13px;text-transform:uppercase;}
+  .page-banner h2{font-size:32px;margin-top:10px;}
+  .content-wrap{max-width:880px;margin:0 auto;padding:80px 5%;}
+  .content-wrap h3{font-size:24px;margin:36px 0 16px;color:var(--navy);}
+  .content-wrap h3:first-child{margin-top:0;}
+  .content-wrap p{color:#5a6478;line-height:1.9;margin-bottom:14px;font-size:15px;}
+  .info-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin:30px 0 50px;}
+  .info-card{background:var(--bg-light);border-radius:14px;padding:28px 22px;text-align:center;}
+  .info-card .icon{font-size:28px;color:var(--gold-deep);margin-bottom:12px;}
+  .info-card h4{font-size:15.5px;margin-bottom:8px;}
+  .info-card p{font-size:13px;margin:0;}
+  table{width:100%;border-collapse:collapse;margin:24px 0 40px;}
+  table th,table td{padding:14px 16px;text-align:left;border-bottom:1px solid #eee;font-size:14px;}
+  table th{background:var(--bg-light);color:var(--navy);font-weight:600;}
+  table td{color:#5a6478;}
+  @media(max-width:700px){.info-cards{grid-template-columns:1fr;}}
+  footer{background:var(--navy);color:var(--gray);padding:70px 5% 0;}
+  .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.2fr;gap:44px;padding-bottom:44px;border-bottom:1px solid #1e2a42;}
+  .footer-grid h3{color:var(--gold);font-size:16px;margin-bottom:20px;} .footer-grid p{font-size:14px;line-height:1.9;}
+  .footer-grid ul{list-style:none;} .footer-grid ul li{margin-bottom:11px;} .footer-grid ul li a{color:var(--gray);font-size:14px;}
+  .footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:16px;} .footer-logo img{height:44px;width:44px;border-radius:50%;border:2px solid var(--gold);}
+  .footer-logo h2{color:var(--white);font-size:20px;} .footer-logo h2 span{color:var(--gold);}
+  .social a{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border:1px solid #1e2a42;border-radius:50%;color:var(--gray);margin-right:10px;font-size:14px;}
+  .bottom-bar{padding:24px 0;text-align:center;font-size:13px;color:#5a6478;}
+  @media(max-width:960px){.footer-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:600px){.footer-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="topbar"><div>Serving China · Japan · USA · UK</div><div><a href="tel:+923007376888">+92 300 7376888</a><a href="mailto:Sea2sky1@hotmail.com">Sea2sky1@hotmail.com</a></div></div>
+  <div class="navwrap">
+    <div class="logo"><img src="logo.png" alt="Sea2Sky Traders Logo"><div class="logo-text"><h1>SEA2SKY <span>TRADERS</span></h1><p>Global Trading House</p></div></div>
+    <nav><ul id="navMenu">
+      <li><a href="index.html">Home</a></li><li><a href="shop.html">Shop</a></li><li><a href="about.html">About</a></li>
+      <li><a href="shipping-returns.html">Shipping &amp; Returns</a></li><li><a href="contact.html">Contact</a></li>
+    </ul></nav>
+    <a href="cart.html" class="cta-btn">🛒 Cart</a>
+    <div class="menu-toggle" onclick="document.getElementById('navMenu').classList.toggle('active')">☰</div>
+  </div>
+</header>
+
+<section class="page-banner"><span>Policies</span><h2>Shipping &amp; Returns</h2></section>
+
+<section class="content-wrap">
+  <div class="info-cards">
+    <div class="info-card"><div class="icon">🚢</div><h4>Worldwide Shipping</h4><p>We ship to USA, UK, Europe &amp; beyond</p></div>
+    <div class="info-card"><div class="icon">⏱️</div><h4>7–14 Days Delivery</h4><p>Depending on destination country</p></div>
+    <div class="info-card"><div class="icon">↩️</div><h4>7-Day Returns</h4><p>Easy returns on eligible items</p></div>
+  </div>
+
+  <h3>Shipping Policy</h3>
+  <p>Sea2Sky Traders ships internationally from Lahore, Pakistan to clients across the USA, UK, Europe and other global markets. All orders are carefully packed and quality-checked before dispatch.</p>
+  <table>
+    <tr><th>Region</th><th>Estimated Delivery</th><th>Shipping Cost</th></tr>
+    <tr><td>USA &amp; Canada</td><td>10–14 business days</td><td>Calculated at checkout</td></tr>
+    <tr><td>UK &amp; Europe</td><td>7–10 business days</td><td>Calculated at checkout</td></tr>
+    <tr><td>Asia &amp; Middle East</td><td>5–8 business days</td><td>Calculated at checkout</td></tr>
+  </table>
+
+  <h3>Return Policy</h3>
+  <p>We accept returns within 7 days of delivery for unused items in original packaging. Perishable items (Dry Fruits, Fruits) are non-returnable unless damaged on arrival.</p>
+  <p>To initiate a return, please contact our team at <a href="mailto:Sea2sky1@hotmail.com" style="color:var(--gold-deep)">Sea2sky1@hotmail.com</a> with your order number and reason for return.</p>
+
+  <h3>Refunds</h3>
+  <p>Once your return is received and inspected, refunds are processed within 5–7 business days to your original payment method.</p>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div><div class="footer-logo"><img src="logo.png" alt="Sea2Sky Traders Logo"><h2>SEA2SKY <span>TRADERS</span></h2></div><p>Premium importer &amp; exporter of Garments, Dry Fruits, Fruits, Sports items and more.</p><div class="social"><a href="#">f</a><a href="#">in</a><a href="#">ig</a></div></div>
+    <div><h3>Quick Links</h3><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="shop.html">Products</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><h3>Categories</h3><ul><li><a href="shop.html?cat=garments">Garments</a></li><li><a href="shop.html?cat=dry-fruits">Dry Fruits</a></li><li><a href="shop.html?cat=fruits">Fruits</a></li><li><a href="shop.html?cat=sports-toys">Sports &amp; Toys</a></li></ul></div>
+    <div><h3>Contact Us</h3><p>CEO: M. Imran Khan<br>+92 300 7376888<br><br>GM: M. Saeed Khalid<br>+92 300 6277000<br>042 35315214<br><br>Sea2sky1@hotmail.com</p></div>
+  </div>
+  <div class="bottom-bar">© 2026 Sea2Sky Traders. All Rights Reserved.</div>
+</footer>
+
+</body>
+</html>
