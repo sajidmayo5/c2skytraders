@@ -3,120 +3,127 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sea2Sky Traders | Premium Import & Export</title>
+<title>Sea2Sky Traders | Premium Global Import & Export</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root{
     --gold:#c9a24b;
-    --gold-light:#e6c878;
-    --navy:#0b1120;
+    --gold-light:#e8cd8a;
+    --gold-deep:#a3812f;
+    --navy:#0a0f1f;
     --navy-2:#111a2e;
+    --navy-3:#16223a;
     --white:#ffffff;
     --gray:#9aa3b2;
+    --bg-light:#f8f6f1;
   }
-  *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif;}
-  body{background:var(--white);color:var(--navy);}
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',Arial,sans-serif;}
+  h1,h2,h3,.brand-font{font-family:'Playfair Display',serif;}
+  body{background:var(--white);color:var(--navy);overflow-x:hidden;}
+  a{text-decoration:none;}
+  img{display:block;max-width:100%;}
 
   /* ===== HEADER ===== */
-  header{
-    background:var(--navy);
-    position:sticky;top:0;z-index:999;
-    box-shadow:0 2px 12px rgba(0,0,0,.25);
-  }
-  .topbar{
-    background:var(--navy-2);
-    color:var(--gray);
-    font-size:13px;
-    padding:6px 5%;
-    display:flex;justify-content:space-between;flex-wrap:wrap;
-  }
-  .topbar a{color:var(--gold-light);text-decoration:none;margin-left:14px;}
-  .navwrap{
-    display:flex;align-items:center;justify-content:space-between;
-    padding:14px 5%;
-  }
+  header{background:var(--navy);position:sticky;top:0;z-index:999;box-shadow:0 4px 20px rgba(0,0,0,.3);}
+  .topbar{background:var(--navy-3);color:var(--gray);font-size:12.5px;padding:8px 5%;display:flex;justify-content:space-between;flex-wrap:wrap;letter-spacing:.3px;}
+  .topbar .tb-left span{margin-right:20px;}
+  .topbar .tb-left span::before{content:"✦ ";color:var(--gold);}
+  .topbar a{color:var(--gold-light);text-decoration:none;margin-left:16px;}
+  .navwrap{display:flex;align-items:center;justify-content:space-between;padding:16px 5%;}
   .logo{display:flex;align-items:center;gap:12px;}
-  .logo img{height:52px;width:52px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);}
-  .logo-text h1{color:var(--white);font-size:22px;letter-spacing:1px;}
+  .logo img{height:54px;width:54px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);}
+  .logo-text h1{color:var(--white);font-size:23px;letter-spacing:1px;font-weight:700;}
   .logo-text h1 span{color:var(--gold);}
-  .logo-text p{color:var(--gray);font-size:11px;letter-spacing:2px;text-transform:uppercase;}
-  nav ul{display:flex;list-style:none;gap:28px;}
-  nav ul li a{
-    color:var(--white);text-decoration:none;font-size:15px;
-    font-weight:500;position:relative;padding:4px 0;
-    transition:color .3s;
-  }
+  .logo-text p{color:var(--gray);font-size:10.5px;letter-spacing:3px;text-transform:uppercase;margin-top:2px;}
+  nav ul{display:flex;list-style:none;gap:32px;}
+  nav ul li a{color:var(--white);font-size:14.5px;font-weight:500;position:relative;padding:4px 0;transition:color .3s;}
   nav ul li a:hover{color:var(--gold);}
-  nav ul li a::after{
-    content:'';position:absolute;bottom:0;left:0;width:0;height:2px;
-    background:var(--gold);transition:width .3s;
-  }
+  nav ul li a::after{content:'';position:absolute;bottom:0;left:0;width:0;height:2px;background:var(--gold);transition:width .3s;}
   nav ul li a:hover::after{width:100%;}
-  .cta-btn{
-    background:linear-gradient(135deg,var(--gold),var(--gold-light));
-    color:var(--navy);padding:10px 22px;border-radius:30px;
-    font-weight:700;font-size:14px;text-decoration:none;
-  }
+  .header-right{display:flex;align-items:center;gap:18px;}
+  .cta-btn{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy);padding:11px 26px;border-radius:30px;font-weight:700;font-size:13.5px;letter-spacing:.5px;box-shadow:0 6px 16px rgba(201,162,75,.35);}
   .menu-toggle{display:none;color:var(--white);font-size:26px;cursor:pointer;}
-
-  @media(max-width:900px){
-    nav ul{
-      position:fixed;top:0;right:-100%;height:100vh;width:70%;
-      background:var(--navy);flex-direction:column;padding:100px 30px;
-      gap:24px;transition:right .4s;
-    }
+  @media(max-width:960px){
+    nav ul{position:fixed;top:0;right:-100%;height:100vh;width:75%;background:var(--navy);flex-direction:column;padding:110px 30px;gap:26px;transition:right .4s;z-index:1000;}
     nav ul.active{right:0;}
     .menu-toggle{display:block;}
   }
 
   /* ===== HERO ===== */
   .hero{
-    background:linear-gradient(rgba(11,17,32,.75),rgba(11,17,32,.85)),
-      url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1600') center/cover;
-    color:var(--white);text-align:center;
-    padding:120px 5% 90px;
+    background:linear-gradient(120deg,rgba(10,15,31,.92),rgba(10,15,31,.75)),
+      url('https://images.unsplash.com/photo-1494412574643-ff11b0a5c1c3?w=1800') center/cover;
+    color:var(--white);padding:150px 5% 110px;position:relative;
   }
-  .hero span{color:var(--gold);letter-spacing:3px;font-size:13px;text-transform:uppercase;}
-  .hero h2{font-size:42px;margin:18px 0;line-height:1.3;}
-  .hero p{color:var(--gray);max-width:600px;margin:0 auto 30px;font-size:16px;}
-  .hero-btn{
-    background:var(--gold);color:var(--navy);padding:14px 34px;
-    border-radius:30px;text-decoration:none;font-weight:700;
-  }
+  .hero-inner{max-width:640px;}
+  .hero .eyebrow{color:var(--gold);letter-spacing:4px;font-size:13px;text-transform:uppercase;font-weight:600;}
+  .hero h2{font-size:50px;margin:22px 0;line-height:1.25;font-weight:700;}
+  .hero h2 em{color:var(--gold);font-style:normal;}
+  .hero p{color:var(--gray);font-size:16.5px;line-height:1.8;margin-bottom:36px;max-width:520px;}
+  .hero-btns{display:flex;gap:16px;flex-wrap:wrap;}
+  .hero-btn{background:var(--gold);color:var(--navy);padding:15px 36px;border-radius:30px;font-weight:700;font-size:14.5px;letter-spacing:.4px;}
+  .hero-btn.outline{background:transparent;border:1.5px solid var(--gold-light);color:var(--white);}
+  .flags{display:flex;gap:14px;margin-top:46px;color:var(--gray);font-size:13px;align-items:center;}
+  .flags b{color:var(--gold-light);}
+
+  /* ===== TRUST STRIP ===== */
+  .trust-strip{background:var(--navy-2);color:var(--gray);padding:26px 5%;display:flex;justify-content:space-around;flex-wrap:wrap;gap:20px;text-align:center;border-top:1px solid #1e2a42;border-bottom:1px solid #1e2a42;}
+  .trust-strip div{font-size:13px;letter-spacing:.5px;}
+  .trust-strip div span{display:block;color:var(--gold);font-family:'Playfair Display',serif;font-size:26px;font-weight:700;margin-bottom:4px;}
+
+  /* ===== CATEGORIES ===== */
+  .cat-section{padding:100px 5% 90px;text-align:center;background:var(--bg-light);}
+  .eyebrow-dark{color:var(--gold-deep);letter-spacing:4px;font-size:13px;text-transform:uppercase;font-weight:600;}
+  .cat-section h2{font-size:36px;margin:14px 0 50px;color:var(--navy);}
+  .cat-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px;}
+  .cat-card{position:relative;border-radius:16px;overflow:hidden;height:280px;color:var(--white);box-shadow:0 12px 30px rgba(0,0,0,.12);}
+  .cat-card img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .5s;}
+  .cat-card:hover img{transform:scale(1.08);}
+  .cat-card::after{content:'';position:absolute;inset:0;background:linear-gradient(to top,rgba(10,15,31,.9),rgba(10,15,31,.1));}
+  .cat-card .cat-label{position:absolute;bottom:0;left:0;right:0;padding:24px;z-index:2;text-align:left;}
+  .cat-label span{font-size:11px;letter-spacing:2px;color:var(--gold-light);text-transform:uppercase;}
+  .cat-label h3{font-size:21px;margin-top:6px;}
+  @media(max-width:960px){.cat-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:600px){.cat-grid{grid-template-columns:1fr;}}
+
+  /* ===== WHY US ===== */
+  .why-section{padding:100px 5%;display:flex;gap:60px;align-items:center;flex-wrap:wrap;}
+  .why-img{flex:1;min-width:320px;border-radius:18px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.15);}
+  .why-img img{width:100%;height:460px;object-fit:cover;}
+  .why-text{flex:1;min-width:320px;}
+  .why-text h2{font-size:34px;color:var(--navy);margin:14px 0 22px;line-height:1.3;}
+  .why-text p{color:#5a6478;line-height:1.9;margin-bottom:30px;font-size:15px;}
+  .why-list{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
+  .why-item{display:flex;gap:14px;align-items:flex-start;}
+  .why-icon{width:44px;height:44px;border-radius:50%;background:var(--navy);color:var(--gold);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
+  .why-item h4{font-size:15px;margin-bottom:4px;color:var(--navy);}
+  .why-item p{font-size:13px;color:#7a8394;margin:0;}
+
+  /* ===== CTA BANNER ===== */
+  .cta-banner{background:linear-gradient(120deg,var(--navy),var(--navy-3));color:var(--white);text-align:center;padding:90px 5%;}
+  .cta-banner span{color:var(--gold);letter-spacing:3px;font-size:13px;text-transform:uppercase;}
+  .cta-banner h2{font-size:34px;margin:16px 0 30px;max-width:700px;margin-left:auto;margin-right:auto;}
 
   /* ===== FOOTER ===== */
-  footer{background:var(--navy);color:var(--gray);padding:60px 5% 0;}
-  .footer-grid{
-    display:grid;grid-template-columns:1.3fr 1fr 1fr 1.2fr;
-    gap:40px;padding-bottom:40px;border-bottom:1px solid #1f2a40;
-  }
-  .footer-grid h3{color:var(--gold);font-size:16px;margin-bottom:18px;letter-spacing:1px;}
-  .footer-grid p{font-size:14px;line-height:1.8;}
+  footer{background:var(--navy);color:var(--gray);padding:70px 5% 0;}
+  .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.2fr;gap:44px;padding-bottom:44px;border-bottom:1px solid #1e2a42;}
+  .footer-grid h3{color:var(--gold);font-size:16px;margin-bottom:20px;letter-spacing:1px;font-weight:600;}
+  .footer-grid p{font-size:14px;line-height:1.9;}
   .footer-grid ul{list-style:none;}
-  .footer-grid ul li{margin-bottom:10px;}
-  .footer-grid ul li a{color:var(--gray);text-decoration:none;font-size:14px;}
+  .footer-grid ul li{margin-bottom:11px;}
+  .footer-grid ul li a{color:var(--gray);font-size:14px;}
   .footer-grid ul li a:hover{color:var(--gold);}
-  .footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
-  .footer-logo img{height:42px;width:42px;border-radius:50%;border:2px solid var(--gold);}
+  .footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+  .footer-logo img{height:44px;width:44px;border-radius:50%;border:2px solid var(--gold);}
   .footer-logo h2{color:var(--white);font-size:20px;}
   .footer-logo h2 span{color:var(--gold);}
-  .social a{
-    display:inline-flex;align-items:center;justify-content:center;
-    width:36px;height:36px;border:1px solid #1f2a40;border-radius:50%;
-    color:var(--gray);text-decoration:none;margin-right:10px;font-size:14px;
-  }
+  .social a{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border:1px solid #1e2a42;border-radius:50%;color:var(--gray);margin-right:10px;font-size:14px;transition:.3s;}
   .social a:hover{background:var(--gold);color:var(--navy);border-color:var(--gold);}
-  .bottom-bar{
-    padding:22px 0;text-align:center;font-size:13px;color:#5a6478;
-  }
-  .bottom-bar a{color:var(--gold-light);text-decoration:none;}
-
-  @media(max-width:900px){
-    .footer-grid{grid-template-columns:1fr 1fr;}
-  }
-  @media(max-width:600px){
-    .footer-grid{grid-template-columns:1fr;}
-    .hero h2{font-size:28px;}
-  }
+  .bottom-bar{padding:24px 0;text-align:center;font-size:13px;color:#5a6478;}
+  .bottom-bar a{color:var(--gold-light);}
+  @media(max-width:960px){.footer-grid{grid-template-columns:1fr 1fr;}.why-section{flex-direction:column;}}
+  @media(max-width:600px){.footer-grid{grid-template-columns:1fr;}.hero h2{font-size:32px;}.why-list{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -124,7 +131,10 @@
 <!-- ===== HEADER ===== -->
 <header>
   <div class="topbar">
-    <div>Importer &amp; Exporter — Worldwide Sourcing</div>
+    <div class="tb-left">
+      <span>Serving China · Japan · USA · UK</span>
+      <span>Premium Import &amp; Export House</span>
+    </div>
     <div>
       <a href="tel:+923007376888">+92 300 7376888</a>
       <a href="mailto:Sea2sky1@hotmail.com">Sea2sky1@hotmail.com</a>
@@ -133,68 +143,119 @@
   <div class="navwrap">
     <div class="logo">
       <img src="logo.png" alt="Sea2Sky Traders Logo">
-      <div class="logo-text">
-        <h1>SEA2SKY <span>TRADERS</span></h1>
-        <p>Premium Global Trading House</p>
-      </div>
+      <div class="logo-text"><h1>SEA2SKY <span>TRADERS</span></h1><p>Global Trading House</p></div>
     </div>
     <nav>
       <ul id="navMenu">
-        <li><a href="#">Home</a></li>
-        <li><a href="#">Garments</a></li>
-        <li><a href="#">Dry Fruits</a></li>
-        <li><a href="#">Fruits</a></li>
-        <li><a href="#">Sports &amp; Toys</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="shipping-returns.html">Shipping &amp; Returns</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </nav>
-    <a href="#" class="cta-btn">Get a Quote</a>
-    <div class="menu-toggle" onclick="document.getElementById('navMenu').classList.toggle('active')">☰</div>
+    <div class="header-right">
+      <a href="cart.html" class="cta-btn">🛒 Cart</a>
+      <div class="menu-toggle" onclick="document.getElementById('navMenu').classList.toggle('active')">☰</div>
+    </div>
   </div>
 </header>
 
 <!-- ===== HERO ===== -->
 <section class="hero">
-  <span>Trusted Import &amp; Export Partner</span>
-  <h2>High-Quality Garments, Dry Fruits &amp;<br>Fruits — Sourced Globally</h2>
-  <p>Sea2Sky Traders connects premium suppliers across China, Thailand, Japan and Turkey with buyers worldwide — quality you can trust, service you can rely on.</p>
-  <a href="#" class="hero-btn">Explore Products</a>
+  <div class="hero-inner">
+    <span class="eyebrow">Global Sourcing · Trusted Since 2018</span>
+    <h2>Luxury-Grade <em>Garments</em>, Dry Fruits &amp; Fresh Produce — Delivered Worldwide</h2>
+    <p>Sea2Sky Traders is a premium import &amp; export house connecting world-class suppliers across China, Thailand, Japan and Turkey with discerning buyers in the US, UK, Europe and beyond.</p>
+    <div class="hero-btns">
+      <a href="shop.html" class="hero-btn">Explore Collection</a>
+      <a href="contact.html" class="hero-btn outline">Request a Quote</a>
+    </div>
+    <div class="flags">🌏 Sourcing from <b>China · Japan · Thailand · Turkey</b> — Serving <b>USA · UK · Europe</b></div>
+  </div>
 </section>
 
-<!-- Page body/content sections go here -->
+<!-- ===== TRUST STRIP ===== -->
+<div class="trust-strip">
+  <div><span>500+</span>Global Clients</div>
+  <div><span>4</span>Sourcing Countries</div>
+  <div><span>24/7</span>Client Support</div>
+  <div><span>100%</span>Quality Assured</div>
+</div>
+
+<!-- ===== CATEGORIES ===== -->
+<section class="cat-section">
+  <span class="eyebrow-dark">Our Collection</span>
+  <h2>Shop by Category</h2>
+  <div class="cat-grid">
+    <a href="shop.html?cat=garments" class="cat-card">
+      <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=600" alt="Garments">
+      <div class="cat-label"><span>Premium Collection</span><h3>Garments</h3></div>
+    </a>
+    <a href="shop.html?cat=dry-fruits" class="cat-card">
+      <img src="https://images.unsplash.com/photo-1508061253366-f7da158b6d46?w=600" alt="Dry Fruits">
+      <div class="cat-label"><span>Handpicked</span><h3>Dry Fruits</h3></div>
+    </a>
+    <a href="shop.html?cat=fruits" class="cat-card">
+      <img src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=600" alt="Fruits">
+      <div class="cat-label"><span>Farm Fresh</span><h3>Fruits</h3></div>
+    </a>
+    <a href="shop.html?cat=sports-toys" class="cat-card">
+      <img src="https://images.unsplash.com/photo-1580256081112-e49377338b7f?w=600" alt="Sports & Toys">
+      <div class="cat-label"><span>For Every Child</span><h3>Sports &amp; Toys</h3></div>
+    </a>
+  </div>
+</section>
+
+<!-- ===== WHY US ===== -->
+<section class="why-section">
+  <div class="why-img">
+    <img src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=800" alt="Warehouse">
+  </div>
+  <div class="why-text">
+    <span class="eyebrow-dark">Why Sea2Sky</span>
+    <h2>A Trading House Built on Trust &amp; Precision</h2>
+    <p>From sourcing to delivery, every shipment is handled with the highest standard of care — ensuring our international clients receive nothing less than premium quality, on time, every time.</p>
+    <div class="why-list">
+      <div class="why-item"><div class="why-icon">✓</div><div><h4>Verified Suppliers</h4><p>Rigorously vetted global partners</p></div></div>
+      <div class="why-item"><div class="why-icon">🚢</div><div><h4>Worldwide Shipping</h4><p>Reliable door-to-door logistics</p></div></div>
+      <div class="why-item"><div class="why-icon">💎</div><div><h4>Premium Quality</h4><p>Every item quality-checked</p></div></div>
+      <div class="why-item"><div class="why-icon">🤝</div><div><h4>Dedicated Support</h4><p>Direct line to CEO &amp; GM</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA BANNER ===== -->
+<section class="cta-banner">
+  <span>Get In Touch</span>
+  <h2>Ready to Source Premium Products for Your Market?</h2>
+  <a href="contact.html" class="hero-btn">Contact Our Team</a>
+</section>
 
 <!-- ===== FOOTER ===== -->
 <footer>
   <div class="footer-grid">
     <div>
-      <div class="footer-logo">
-        <img src="logo.png" alt="Sea2Sky Traders Logo">
-        <h2>SEA2SKY <span>TRADERS</span></h2>
-      </div>
-      <p>Importer &amp; Exporter dealing in premium Garments, Dry Fruits, Fruits, Sports items and more — serving international clients with a high standard of quality and trust.</p>
-      <div class="social">
-        <a href="#">f</a>
-        <a href="#">in</a>
-        <a href="#">ig</a>
-      </div>
+      <div class="footer-logo"><img src="logo.png" alt="Sea2Sky Traders Logo"><h2>SEA2SKY <span>TRADERS</span></h2></div>
+      <p>Premium importer &amp; exporter of Garments, Dry Fruits, Fruits, Sports items and more — serving international clients across the globe with unmatched quality and trust.</p>
+      <div class="social"><a href="#">f</a><a href="#">in</a><a href="#">ig</a></div>
     </div>
     <div>
       <h3>Quick Links</h3>
       <ul>
-        <li><a href="#">Home</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="#">Products</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="shop.html">Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
     <div>
       <h3>Categories</h3>
       <ul>
-        <li><a href="#">Garments</a></li>
-        <li><a href="#">Dry Fruits</a></li>
-        <li><a href="#">Fruits</a></li>
-        <li><a href="#">Sports &amp; Toys</a></li>
+        <li><a href="shop.html?cat=garments">Garments</a></li>
+        <li><a href="shop.html?cat=dry-fruits">Dry Fruits</a></li>
+        <li><a href="shop.html?cat=fruits">Fruits</a></li>
+        <li><a href="shop.html?cat=sports-toys">Sports &amp; Toys</a></li>
       </ul>
     </div>
     <div>
@@ -208,10 +269,8 @@
       </p>
     </div>
   </div>
-  <div class="bottom-bar">
-    © 2026 Sea2Sky Traders. All Rights Reserved. | <a href="#">Facebook Page</a>
-  </div>
+  <div class="bottom-bar">© 2026 Sea2Sky Traders. All Rights Reserved. | <a href="#">Facebook Page</a></div>
 </footer>
 
 </body>
-  </html>
+</html>
