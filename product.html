@@ -1,1 +1,123 @@
-3
+<!-- ==================== product.html ==================== -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Product Details | Sea2Sky Traders</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{--gold:#c9a24b;--gold-light:#e8cd8a;--navy:#0a0f1f;--navy-2:#111a2e;--navy-3:#16223a;--white:#fff;--gray:#9aa3b2;--bg-light:#f8f6f1;}
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',Arial,sans-serif;}
+  h1,h2,h3{font-family:'Playfair Display',serif;}
+  body{color:var(--navy);} a{text-decoration:none;} img{display:block;max-width:100%;}
+  header{background:var(--navy);position:sticky;top:0;z-index:999;box-shadow:0 4px 20px rgba(0,0,0,.3);}
+  .topbar{background:var(--navy-3);color:var(--gray);font-size:12.5px;padding:8px 5%;display:flex;justify-content:space-between;flex-wrap:wrap;}
+  .topbar a{color:var(--gold-light);margin-left:16px;}
+  .navwrap{display:flex;align-items:center;justify-content:space-between;padding:16px 5%;}
+  .logo{display:flex;align-items:center;gap:12px;}
+  .logo img{height:54px;width:54px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);}
+  .logo-text h1{color:var(--white);font-size:23px;} .logo-text h1 span{color:var(--gold);}
+  .logo-text p{color:var(--gray);font-size:10.5px;letter-spacing:3px;text-transform:uppercase;}
+  nav ul{display:flex;list-style:none;gap:32px;}
+  nav ul li a{color:var(--white);font-size:14.5px;font-weight:500;}
+  nav ul li a:hover{color:var(--gold);}
+  .cta-btn{background:linear-gradient(135deg,var(--gold),var(--gold-light));color:var(--navy);padding:11px 26px;border-radius:30px;font-weight:700;font-size:13.5px;}
+  .menu-toggle{display:none;color:var(--white);font-size:26px;cursor:pointer;}
+  @media(max-width:960px){nav ul{position:fixed;top:0;right:-100%;height:100vh;width:75%;background:var(--navy);flex-direction:column;padding:110px 30px;gap:26px;transition:right .4s;}nav ul.active{right:0;}.menu-toggle{display:block;}}
+  .breadcrumb{padding:20px 5%;font-size:13px;color:#7a8394;background:var(--bg-light);}
+  .breadcrumb a{color:var(--gold-deep,#a3812f);}
+  .product-wrap{display:flex;gap:50px;padding:60px 5%;flex-wrap:wrap;}
+  .product-gallery{flex:1;min-width:320px;}
+  .main-img{border-radius:16px;overflow:hidden;box-shadow:0 20px 50px rgba(0,0,0,.12);margin-bottom:16px;}
+  .main-img img{width:100%;height:440px;object-fit:cover;}
+  .thumbs{display:flex;gap:12px;}
+  .thumbs img{width:80px;height:80px;object-fit:cover;border-radius:8px;border:2px solid transparent;cursor:pointer;}
+  .thumbs img:hover{border-color:var(--gold);}
+  .product-info{flex:1;min-width:320px;}
+  .product-info span.cat{color:var(--gold-deep,#a3812f);text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:600;}
+  .product-info h1{font-size:32px;margin:12px 0 16px;color:var(--navy);}
+  .price-row{display:flex;align-items:center;gap:14px;margin-bottom:20px;}
+  .price-row .now{font-size:26px;font-weight:700;color:var(--navy);}
+  .price-row .old{text-decoration:line-through;color:#aaa;font-size:16px;}
+  .rating{color:var(--gold);margin-bottom:24px;font-size:14px;}
+  .desc{color:#5a6478;line-height:1.9;margin-bottom:28px;font-size:14.5px;}
+  .qty-row{display:flex;align-items:center;gap:20px;margin-bottom:30px;}
+  .qty-box{display:flex;align-items:center;border:1px solid #ddd;border-radius:30px;overflow:hidden;}
+  .qty-box button{background:none;border:none;padding:10px 16px;cursor:pointer;font-size:16px;}
+  .qty-box span{padding:0 14px;}
+  .add-cart-btn{background:var(--navy);color:var(--white);padding:15px 40px;border-radius:30px;font-weight:700;border:none;cursor:pointer;font-size:14.5px;}
+  .add-cart-btn:hover{background:var(--gold);color:var(--navy);}
+  .meta-info{margin-top:30px;border-top:1px solid #eee;padding-top:22px;font-size:13.5px;color:#5a6478;line-height:2;}
+  .meta-info b{color:var(--navy);}
+  footer{background:var(--navy);color:var(--gray);padding:70px 5% 0;margin-top:40px;}
+  .footer-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr 1.2fr;gap:44px;padding-bottom:44px;border-bottom:1px solid #1e2a42;}
+  .footer-grid h3{color:var(--gold);font-size:16px;margin-bottom:20px;}
+  .footer-grid p{font-size:14px;line-height:1.9;}
+  .footer-grid ul{list-style:none;} .footer-grid ul li{margin-bottom:11px;} .footer-grid ul li a{color:var(--gray);font-size:14px;}
+  .footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:16px;}
+  .footer-logo img{height:44px;width:44px;border-radius:50%;border:2px solid var(--gold);}
+  .footer-logo h2{color:var(--white);font-size:20px;} .footer-logo h2 span{color:var(--gold);}
+  .social a{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;border:1px solid #1e2a42;border-radius:50%;color:var(--gray);margin-right:10px;font-size:14px;}
+  .bottom-bar{padding:24px 0;text-align:center;font-size:13px;color:#5a6478;}
+  @media(max-width:960px){.footer-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:600px){.footer-grid{grid-template-columns:1fr;}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="topbar"><div>Serving China · Japan · USA · UK</div><div><a href="tel:+923007376888">+92 300 7376888</a><a href="mailto:Sea2sky1@hotmail.com">Sea2sky1@hotmail.com</a></div></div>
+  <div class="navwrap">
+    <div class="logo"><img src="logo.png" alt="Sea2Sky Traders Logo"><div class="logo-text"><h1>SEA2SKY <span>TRADERS</span></h1><p>Global Trading House</p></div></div>
+    <nav><ul id="navMenu">
+      <li><a href="index.html">Home</a></li><li><a href="shop.html">Shop</a></li><li><a href="about.html">About</a></li>
+      <li><a href="shipping-returns.html">Shipping &amp; Returns</a></li><li><a href="contact.html">Contact</a></li>
+    </ul></nav>
+    <a href="cart.html" class="cta-btn">🛒 Cart</a>
+    <div class="menu-toggle" onclick="document.getElementById('navMenu').classList.toggle('active')">☰</div>
+  </div>
+</header>
+
+<div class="breadcrumb"><a href="index.html">Home</a> / <a href="shop.html">Shop</a> / Product Details</div>
+
+<section class="product-wrap">
+  <div class="product-gallery">
+    <div class="main-img"><img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=800" alt="Product" id="mainImg"></div>
+    <div class="thumbs">
+      <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=200" onclick="document.getElementById('mainImg').src=this.src">
+      <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?w=200" onclick="document.getElementById('mainImg').src=this.src">
+      <img src="https://images.unsplash.com/photo-1620799139507-2a76f79a2f4d?w=200" onclick="document.getElementById('mainImg').src=this.src">
+    </div>
+  </div>
+  <div class="product-info">
+    <span class="cat">Garments</span>
+    <h1>Premium Cotton Shirt</h1>
+    <div class="rating">★★★★★ (48 Reviews)</div>
+    <div class="price-row"><span class="now">$24.99</span><span class="old">$34.99</span></div>
+    <p class="desc">Crafted from finest export-quality cotton, this premium shirt combines comfort with a sharp, professional finish — sourced and quality-checked for international standards.</p>
+    <div class="qty-row">
+      <div class="qty-box"><button onclick="document.getElementById('qty').innerText--">−</button><span id="qty">1</span><button onclick="document.getElementById('qty').innerText++">+</button></div>
+      <button class="add-cart-btn">Add to Cart</button>
+    </div>
+    <div class="meta-info">
+      <p><b>SKU:</b> S2S-GAR-0231</p>
+      <p><b>Category:</b> Garments</p>
+      <p><b>Availability:</b> In Stock, ships from Lahore</p>
+      <p><b>Shipping:</b> Worldwide — see <a href="shipping-returns.html">Shipping &amp; Returns</a></p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+    <div><div class="footer-logo"><img src="logo.png" alt="Sea2Sky Traders Logo"><h2>SEA2SKY <span>TRADERS</span></h2></div><p>Premium importer &amp; exporter of Garments, Dry Fruits, Fruits, Sports items and more.</p><div class="social"><a href="#">f</a><a href="#">in</a><a href="#">ig</a></div></div>
+    <div><h3>Quick Links</h3><ul><li><a href="index.html">Home</a></li><li><a href="about.html">About Us</a></li><li><a href="shop.html">Products</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><h3>Categories</h3><ul><li><a href="shop.html?cat=garments">Garments</a></li><li><a href="shop.html?cat=dry-fruits">Dry Fruits</a></li><li><a href="shop.html?cat=fruits">Fruits</a></li><li><a href="shop.html?cat=sports-toys">Sports &amp; Toys</a></li></ul></div>
+    <div><h3>Contact Us</h3><p>CEO: M. Imran Khan<br>+92 300 7376888<br><br>GM: M. Saeed Khalid<br>+92 300 6277000<br>042 35315214<br><br>Sea2sky1@hotmail.com</p></div>
+  </div>
+  <div class="bottom-bar">© 2026 Sea2Sky Traders. All Rights Reserved.</div>
+</footer>
+
+</body>
+</html>
