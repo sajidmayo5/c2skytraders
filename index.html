@@ -1,1 +1,217 @@
-1
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sea2Sky Traders | Premium Import & Export</title>
+<style>
+  :root{
+    --gold:#c9a24b;
+    --gold-light:#e6c878;
+    --navy:#0b1120;
+    --navy-2:#111a2e;
+    --white:#ffffff;
+    --gray:#9aa3b2;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;font-family:'Segoe UI',Arial,sans-serif;}
+  body{background:var(--white);color:var(--navy);}
+
+  /* ===== HEADER ===== */
+  header{
+    background:var(--navy);
+    position:sticky;top:0;z-index:999;
+    box-shadow:0 2px 12px rgba(0,0,0,.25);
+  }
+  .topbar{
+    background:var(--navy-2);
+    color:var(--gray);
+    font-size:13px;
+    padding:6px 5%;
+    display:flex;justify-content:space-between;flex-wrap:wrap;
+  }
+  .topbar a{color:var(--gold-light);text-decoration:none;margin-left:14px;}
+  .navwrap{
+    display:flex;align-items:center;justify-content:space-between;
+    padding:14px 5%;
+  }
+  .logo{display:flex;align-items:center;gap:12px;}
+  .logo img{height:52px;width:52px;border-radius:50%;object-fit:cover;border:2px solid var(--gold);}
+  .logo-text h1{color:var(--white);font-size:22px;letter-spacing:1px;}
+  .logo-text h1 span{color:var(--gold);}
+  .logo-text p{color:var(--gray);font-size:11px;letter-spacing:2px;text-transform:uppercase;}
+  nav ul{display:flex;list-style:none;gap:28px;}
+  nav ul li a{
+    color:var(--white);text-decoration:none;font-size:15px;
+    font-weight:500;position:relative;padding:4px 0;
+    transition:color .3s;
+  }
+  nav ul li a:hover{color:var(--gold);}
+  nav ul li a::after{
+    content:'';position:absolute;bottom:0;left:0;width:0;height:2px;
+    background:var(--gold);transition:width .3s;
+  }
+  nav ul li a:hover::after{width:100%;}
+  .cta-btn{
+    background:linear-gradient(135deg,var(--gold),var(--gold-light));
+    color:var(--navy);padding:10px 22px;border-radius:30px;
+    font-weight:700;font-size:14px;text-decoration:none;
+  }
+  .menu-toggle{display:none;color:var(--white);font-size:26px;cursor:pointer;}
+
+  @media(max-width:900px){
+    nav ul{
+      position:fixed;top:0;right:-100%;height:100vh;width:70%;
+      background:var(--navy);flex-direction:column;padding:100px 30px;
+      gap:24px;transition:right .4s;
+    }
+    nav ul.active{right:0;}
+    .menu-toggle{display:block;}
+  }
+
+  /* ===== HERO ===== */
+  .hero{
+    background:linear-gradient(rgba(11,17,32,.75),rgba(11,17,32,.85)),
+      url('https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1600') center/cover;
+    color:var(--white);text-align:center;
+    padding:120px 5% 90px;
+  }
+  .hero span{color:var(--gold);letter-spacing:3px;font-size:13px;text-transform:uppercase;}
+  .hero h2{font-size:42px;margin:18px 0;line-height:1.3;}
+  .hero p{color:var(--gray);max-width:600px;margin:0 auto 30px;font-size:16px;}
+  .hero-btn{
+    background:var(--gold);color:var(--navy);padding:14px 34px;
+    border-radius:30px;text-decoration:none;font-weight:700;
+  }
+
+  /* ===== FOOTER ===== */
+  footer{background:var(--navy);color:var(--gray);padding:60px 5% 0;}
+  .footer-grid{
+    display:grid;grid-template-columns:1.3fr 1fr 1fr 1.2fr;
+    gap:40px;padding-bottom:40px;border-bottom:1px solid #1f2a40;
+  }
+  .footer-grid h3{color:var(--gold);font-size:16px;margin-bottom:18px;letter-spacing:1px;}
+  .footer-grid p{font-size:14px;line-height:1.8;}
+  .footer-grid ul{list-style:none;}
+  .footer-grid ul li{margin-bottom:10px;}
+  .footer-grid ul li a{color:var(--gray);text-decoration:none;font-size:14px;}
+  .footer-grid ul li a:hover{color:var(--gold);}
+  .footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:14px;}
+  .footer-logo img{height:42px;width:42px;border-radius:50%;border:2px solid var(--gold);}
+  .footer-logo h2{color:var(--white);font-size:20px;}
+  .footer-logo h2 span{color:var(--gold);}
+  .social a{
+    display:inline-flex;align-items:center;justify-content:center;
+    width:36px;height:36px;border:1px solid #1f2a40;border-radius:50%;
+    color:var(--gray);text-decoration:none;margin-right:10px;font-size:14px;
+  }
+  .social a:hover{background:var(--gold);color:var(--navy);border-color:var(--gold);}
+  .bottom-bar{
+    padding:22px 0;text-align:center;font-size:13px;color:#5a6478;
+  }
+  .bottom-bar a{color:var(--gold-light);text-decoration:none;}
+
+  @media(max-width:900px){
+    .footer-grid{grid-template-columns:1fr 1fr;}
+  }
+  @media(max-width:600px){
+    .footer-grid{grid-template-columns:1fr;}
+    .hero h2{font-size:28px;}
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header>
+  <div class="topbar">
+    <div>Importer &amp; Exporter — Worldwide Sourcing</div>
+    <div>
+      <a href="tel:+923007376888">+92 300 7376888</a>
+      <a href="mailto:Sea2sky1@hotmail.com">Sea2sky1@hotmail.com</a>
+    </div>
+  </div>
+  <div class="navwrap">
+    <div class="logo">
+      <img src="logo.png" alt="Sea2Sky Traders Logo">
+      <div class="logo-text">
+        <h1>SEA2SKY <span>TRADERS</span></h1>
+        <p>Premium Global Trading House</p>
+      </div>
+    </div>
+    <nav>
+      <ul id="navMenu">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Garments</a></li>
+        <li><a href="#">Dry Fruits</a></li>
+        <li><a href="#">Fruits</a></li>
+        <li><a href="#">Sports &amp; Toys</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="#" class="cta-btn">Get a Quote</a>
+    <div class="menu-toggle" onclick="document.getElementById('navMenu').classList.toggle('active')">☰</div>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <span>Trusted Import &amp; Export Partner</span>
+  <h2>High-Quality Garments, Dry Fruits &amp;<br>Fruits — Sourced Globally</h2>
+  <p>Sea2Sky Traders connects premium suppliers across China, Thailand, Japan and Turkey with buyers worldwide — quality you can trust, service you can rely on.</p>
+  <a href="#" class="hero-btn">Explore Products</a>
+</section>
+
+<!-- Page body/content sections go here -->
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="footer-grid">
+    <div>
+      <div class="footer-logo">
+        <img src="logo.png" alt="Sea2Sky Traders Logo">
+        <h2>SEA2SKY <span>TRADERS</span></h2>
+      </div>
+      <p>Importer &amp; Exporter dealing in premium Garments, Dry Fruits, Fruits, Sports items and more — serving international clients with a high standard of quality and trust.</p>
+      <div class="social">
+        <a href="#">f</a>
+        <a href="#">in</a>
+        <a href="#">ig</a>
+      </div>
+    </div>
+    <div>
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Products</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Categories</h3>
+      <ul>
+        <li><a href="#">Garments</a></li>
+        <li><a href="#">Dry Fruits</a></li>
+        <li><a href="#">Fruits</a></li>
+        <li><a href="#">Sports &amp; Toys</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Contact Us</h3>
+      <p>
+        CEO: M. Imran Khan<br>+92 300 7376888<br><br>
+        GM: M. Saeed Khalid<br>+92 300 6277000<br>
+        042 35315214<br><br>
+        Sea2sky1@hotmail.com<br>
+        www.sea2skytraders.com
+      </p>
+    </div>
+  </div>
+  <div class="bottom-bar">
+    © 2026 Sea2Sky Traders. All Rights Reserved. | <a href="#">Facebook Page</a>
+  </div>
+</footer>
+
+</body>
+  </html>
